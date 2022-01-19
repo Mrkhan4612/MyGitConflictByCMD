@@ -8,4 +8,8 @@ public interface IService {
 	public void update(Student student, int sudentid);
 	public void saveOrUpdate(Student student);
 
+public interface IService {
+	public List<Student> getAllStudents();
+	public Student getStudentsById(int id);
+	public void delete(int id);
 }

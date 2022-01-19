@@ -23,5 +23,20 @@ public class ServiceImpl implements IService {
 	// updating a record
 	public void update(Student student, int sudentid) {
 		studentRepository.save(student);
+	// getting all books record by using the method findaAll() of CrudRepository
+	public List<Student> getAllStudents() {
+		List<Student> student = new ArrayList<Student>();
+		studentRepository.findAll().forEach(student1 -> student.add(student1));
+		return student;
+	}
+
+	// getting a specific record by using the method findById() of CrudRepository
+	public Student getStudentsById(int id) {
+		return studentRepository.findById(id).get();
+	}
+
+	// deleting a specific record by using the method deleteById() of CrudRepository
+	public void delete(int id) {
+		studentRepository.deleteById(id);
 	}
 }
