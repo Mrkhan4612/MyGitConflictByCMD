@@ -15,6 +15,14 @@ public class ServiceImpl implements IService {
 	@Autowired
 	IRepo studentRepository;
 
+	// saving a specific record by using the method save() of CrudRepository
+	public void saveOrUpdate(Student student) {
+		studentRepository.save(student);
+	}
+
+	// updating a record
+	public void update(Student student, int sudentid) {
+		studentRepository.save(student);
 	// getting all books record by using the method findaAll() of CrudRepository
 	public List<Student> getAllStudents() {
 		List<Student> student = new ArrayList<Student>();
